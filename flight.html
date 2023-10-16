@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flight Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(flights.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #08ecd9;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Flight Search</h2>
+         
+        <form class="flightSearchForm" action="checkout.html">
+            <label for="fromLocation">From:</label>
+            <input type="text" id="fromLocation" placeholder="Departure City" required>
+
+            <label for="toLocation">To:</label>
+            <input type="text" id="toLocation" placeholder="Destination City" required>
+
+            <label for="departureDate">Departure Date:</label>
+            <input type="date" id="departureDate" required>
+
+            <label for="departureTime">Departure Time:</label>
+            <input type="time" id="departureTime" required>
+
+            <!-- <label for="arrivalTime">Arrival Time:</label>
+            <input type="time" id="arrivalTime" required> -->
+            <a href="checkout.html">
+            <input type="submit"value="Search Flights">
+            </a>
+        </form>
+    </div>
+
+    <script>
+        const form = document.querySelector(".flightSearchForm");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const fromLocation = document.getElementById("fromLocation").value;
+            const toLocation = document.getElementById("toLocation").value;
+            const departureDate = document.getElementById("departureDate").value;
+            const departureTime = document.getElementById("departureTime").value;
+            // const arrivalTime = document.getElementById("arrivalTime").value;
+
+            // You can add code here to make a request to a flight search API
+            // and display the search results to the user.
+            // For simplicity, the API request and results handling are not included in this example.
+        });
+        const sampleFlights = [
+            {
+                id: 1,
+                from: 'New York',
+                to: 'Los Angeles',
+                departure: '2023-10-15 10:00',
+                price: 250.00,
+            },
+            // Add more flight entries as needed
+        ];
+    </script>
+</body>
+
+</html>
